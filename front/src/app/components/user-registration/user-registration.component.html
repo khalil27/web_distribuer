@@ -1,0 +1,60 @@
+<div class="container">
+  <h2>Inscription Utilisateur</h2>
+  <form (ngSubmit)="onSubmit()" #userForm="ngForm">
+    <div class="form-group">
+      <label for="nom">Nom:</label>
+      <input type="text" id="nom" required [(ngModel)]="user.nom" name="nom" class="form-control" #nom="ngModel">
+      <div [hidden]="nom.valid || nom.pristine" class="alert alert-danger">
+        Nom est requis
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="prenom">Prénom:</label>
+      <input type="text" id="prenom" required [(ngModel)]="user.prenom" name="prenom" class="form-control" #prenom="ngModel">
+      <div [hidden]="prenom.valid || prenom.pristine" class="alert alert-danger">
+        Prénom est requis
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="login">Login:</label>
+      <input type="text" id="login" required [(ngModel)]="user.login" name="login" class="form-control" #login="ngModel">
+      <div [hidden]="login.valid || login.pristine" class="alert alert-danger">
+        Login est requis
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="password">Mot de passe:</label>
+      <input type="password" id="password" required [(ngModel)]="user.password" name="password" class="form-control" #password="ngModel">
+      <div [hidden]="password.valid || password.pristine" class="alert alert-danger">
+        Mot de passe est requis
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="type">Type:</label>
+      <select id="type" required [(ngModel)]="user.type" name="type" class="form-control" #type="ngModel">
+        <option [ngValue]="0">Administrateur</option>
+        <option [ngValue]="1">Commercial</option>
+        <option [ngValue]="2">Client</option>
+      </select>
+      <div [hidden]="type.valid || type.pristine" class="alert alert-danger">
+        Type est requis
+      </div>
+    </div>
+
+    <!--<div class="form-group form-check">
+      <input type="checkbox" id="status" [(ngModel)]="user.status" name="status" class="form-check-input">
+      <label for="status">Status</label>
+    </div>
+
+    <div class="form-group form-check">
+      <input type="checkbox" id="active" [(ngModel)]="user.active" name="active" class="form-check-input">
+      <label for="active">Active</label>
+    </div>-->
+
+    <button type="submit" class="btn btn-primary" [disabled]="!userForm.form.valid">S'inscrire</button>
+  </form>
+</div>

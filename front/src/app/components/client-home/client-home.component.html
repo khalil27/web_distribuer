@@ -1,0 +1,41 @@
+<!-- header.component.html -->
+<div class="homepage-container">
+  <header class="header">
+    <div class="user-info">
+      <span class="user-name">{{ userName }}</span> | <span class="user-id">{{ userId }}</span>
+    </div>
+    <div class="auth-buttons">
+      <button class="btn btn-secondary" (click)="logout()">Logout</button>
+    </div>
+  </header>
+
+  <main class="main-content">
+    <!-- Contenu principal pour les clients -->
+    <section class="hero-section">
+      <h1>Bienvenue, {{ userName }}!</h1>
+      <p>Explorez notre sites </p>
+      <button class="btn btn-primary" routerLink="/competences">Voir les compétences</button>    </section>
+
+    <section class="dashboard-section">
+      <h2>Dashboard Client</h2>
+      <div class="dashboard-cards">
+        <div class="card">
+          <h3></h3>
+          <p></p>
+        </div>
+        <div class="card">
+          <h3></h3>
+          <p></p>
+        </div>
+        <div class="card">
+          <h3>Offres Spéciales</h3>
+          <p>Profitez de nos offres spéciales et réductions.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>&copy; 2024 . Tous droits réservés.</p>
+  </footer>
+</div>

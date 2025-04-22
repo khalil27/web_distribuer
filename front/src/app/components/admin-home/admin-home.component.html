@@ -1,0 +1,45 @@
+<!-- admin-home.component.html -->
+<div class="admin-home-container">
+    <header class="header">
+      <div class="user-info">
+        <span>{{ userName }}</span> | <span>{{ userId }}</span>
+      </div>
+      <button (click)="logout()">Logout</button>
+    </header>
+  
+    <main class="main-content">
+      <section class="welcome-section">
+        <h1>Bienvenue, Admin {{ userName }}</h1>
+        <p>Voici un aperçu des statistiques et des fonctionnalités disponibles.</p>
+      </section>
+  
+      <section class="admin-dashboard">
+        <div class="stat-card">
+          <h3>Total Utilisateurs</h3>
+          <p>{{ totalUsers }}</p>
+        </div>
+        <div class="stat-card">
+          <h3>montors Actives</h3>
+          <p>{{ activeBookings }}</p>
+        </div>
+        <div class="stat-card">
+          <h3>skills</h3>
+          <p>{{ availableVehicles }}</p>
+        </div>
+      </section>
+  
+      <section class="admin-actions">
+        <h2>Actions Admin</h2>
+        <button class="btn btn-primary" routerLink="/utilisateur-list">Voir la liste des utilisateurs</button>
+        <button class="btn btn-primary" routerLink="/competences">
+          Gérer les compétences
+        </button>
+        <!-- Ajoutez d'autres boutons d'action ici si nécessaire -->
+      </section>
+    </main>
+  
+    <footer class="footer">
+      <p>&copy; 2024 . Tous droits réservés.</p>
+    </footer>
+  </div>
+  

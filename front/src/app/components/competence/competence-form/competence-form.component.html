@@ -1,0 +1,35 @@
+<mat-card>
+  <h2 *ngIf="!isEditMode">Ajouter une compétence</h2>
+  <h2 *ngIf="isEditMode">Modifier la compétence</h2>
+
+  <form [formGroup]="competenceForm" (ngSubmit)="onSubmit()">
+    <mat-form-field appearance="fill">
+      <mat-label>Nom</mat-label>
+      <input matInput formControlName="nom" placeholder="Nom de la compétence">
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Description</mat-label>
+      <textarea matInput formControlName="description"></textarea>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Niveau (1 à 5)</mat-label>
+      <input matInput type="number" formControlName="niveau" min="1" max="5">
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Catégorie</mat-label>
+      <mat-select formControlName="categorie">
+        <mat-option *ngFor="let cat of categories" [value]="cat">{{ cat }}</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <div style="margin-top: 20px;">
+      <button mat-raised-button color="primary" type="submit" [disabled]="competenceForm.invalid">
+        {{ isEditMode ? 'Modifier' : 'Ajouter' }}
+      </button>
+      <button mat-button color="warn" routerLink="/competences">Annuler</button>
+    </div>
+  </form>
+</mat-card>

@@ -1,0 +1,46 @@
+
+<!-- header.component.html -->
+
+<div class="homepage-container">
+    <app-header></app-header>
+   <!-- <header class="header">
+<div class="header">
+    <div class="user-info">
+      <span>{{ userName }}</span> | <span>{{ userId }}</span>
+    </div>
+    <button (click)="logout()">Logout</button>
+  </div>
+</header>-->
+
+<main class="main-content">
+    <!-- Contenu principal pour les commerciaux -->
+    <section class="hero-section">
+      <h1>Bienvenue, {{ userName }}!</h1>
+      <p>Gérez vos compétences et découvrez celles de vos collaborateurs.</p>
+      <button class="btn btn-primary" routerLink="/competences">Gérer les Compétences</button>
+      <p></p>
+    </section>
+
+    <section class="dashboard-section">
+      <h2>Dashboard Commercial</h2>
+      <div class="dashboard-cards">
+        <div class="card">
+          <h3></h3>
+          <p></p>
+        </div>
+        <div class="card">
+          <h3></h3>
+          <p></p>
+        </div>
+        <div class="card">
+          <h3></h3>
+          <p></p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>&copy; 2024 . Tous droits réservés.</p>
+  </footer>
+</div>

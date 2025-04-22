@@ -1,0 +1,101 @@
+/* header.component.css */
+/* admin-home.component.css */
+.admin-home-container {
+    font-family: Arial, sans-serif;
+    color: #333;
+  }
+  
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #f8f9fa;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .user-info {
+    font-size: 1.2em;
+  }
+  
+  .main-content {
+    padding: 40px 20px;
+  }
+  
+  .welcome-section {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .admin-dashboard {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20px;
+  }
+  
+  .stat-card {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 200px;
+  }
+  
+  .stat-card h3 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+  }
+  
+  .stat-card p {
+    font-size: 2em;
+    font-weight: bold;
+  }
+  
+  .admin-actions {
+    text-align: center;
+  }
+  
+  .admin-actions h2 {
+    font-size: 2em;
+    margin-bottom: 20px;
+  }
+  
+  .admin-actions .btn-primary {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .admin-actions .btn-primary:hover {
+    background-color: #0056b3;
+  }
+  
+  .footer {
+    background-color: #f8f9fa;
+    text-align: center;
+    padding: 20px;
+    box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  
+  .user-info {
+    font-size: 16px;
+  }
+  
+  button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #0056b3;
+  }
+
+  

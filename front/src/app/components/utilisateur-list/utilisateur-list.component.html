@@ -1,0 +1,58 @@
+<app-header></app-header>
+<div class="container">
+  <h1>Liste des Utilisateurs</h1>
+  <button class="btn btn-primary" (click)="goHome()">Retour à l'accueil</button>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Nom</th>
+        <th>Prénom</th>
+        <th>Login</th>
+        <th>Status</th>
+        <th>Actif</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let user of users">
+        <td>{{ user.id }}</td>
+        <td>{{ user.nom }}</td>
+        <td>{{ user.prenom }}</td>
+        <td>{{ user.login }}</td>
+        <td>{{ user.status ? 'Actif' : 'Inactif' }}</td>
+        <td>{{ user.active ? 'Oui' : 'Non' }}</td>
+        <td>
+          <button class="btn btn-warning" (click)="openEditModal(user)">Modifier</button>
+          <button class="btn btn-danger" (click)="deleteUser(user.id!)">Supprimer</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+
+<!-- Modal de modification -->
+<div *ngIf="isEditModalOpen" class="modal">
+  <div class="modal-content">
+    <span (click)="closeEditModal()" class="close">&times;</span>
+    <h2>Modifier Utilisateur</h2>
+    <div *ngIf="selectedUser">
+      <label for="nom">Nom:</label>
+      <input id="nom" type="text" [(ngModel)]="selectedUser.nom" />
+      <label for="prenom">Prénom:</label>
+      <input id="prenom" type="text" [(ngModel)]="selectedUser.prenom" />
+      <label for="login">Login:</label>
+      <input id="login" type="text" [(ngModel)]="selectedUser.login" />
+      <label for="status">Status:</label>
+      <select id="status" [(ngModel)]="selectedUser.status">
+        <option [value]="true">Actif</option>
+        <option [value]="false">Inactif</option>
+      </select>
+      <label for="active">Actif:</label>
+      <select id="active" [(ngModel)]="selectedUser.active">
+        <option [value]="true">Oui</option>
+        <option [value]="false">Non</option>
+      </select>
+      <button (click)="saveChanges()">Enregistrer</button>
+    </div>
+  </div>
+</div>
