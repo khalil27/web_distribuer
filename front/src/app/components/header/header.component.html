@@ -5,5 +5,17 @@
   <button (click)="logout()">Logout</button>
 </div>
 
+<!-- Navigation Links -->
+<div class="nav-links">
+  <button (click)="navigateTo('dashboard')">Dashboard</button>
+  <button (click)="navigateTo('badges')">Badges</button>
+  <button (click)="navigateTo('leaderboard')">Leaderboard</button>
+  <button (click)="navigateTo('history')">History</button>
+  <button (click)="navigateTo('add-level/1')">Add Level</button> <!-- Adjust '1' based on dynamic data -->
+  <button (click)="navigateTo('skill_comp')">Skills</button>
+  <button (click)="navigateTo('my-ratings')">My Ratings</button>
+  <button (click)="navigateTo('competences')">Competences</button>
+</div>
+
 <!-- Intègre le Navbar ici -->
 <app-navbar></app-navbar>

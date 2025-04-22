@@ -1,14 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { UserService, User } from '../../services/user.service';
+import { UserService } from '../../services/user.service';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { NavbarComponent } from '../navbar/navbar.component'; // Ajoute cette ligne
+import { NavbarComponent } from '../navbar/navbar.component';
 
 @Component({
   selector: 'app-header',
   standalone: true,
-  imports: [CommonModule, FormsModule, NavbarComponent], // Ajoute NavbarComponent ici
+  imports: [CommonModule, FormsModule, NavbarComponent], 
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.css']
 })
@@ -22,7 +22,7 @@ export class HeaderComponent {
   ngOnInit(): void {
     this.userId = localStorage.getItem('userId');
     this.userName = localStorage.getItem('userName');
-    this.userType = Number(localStorage.getItem('userType')); // Assuming you store the user type in localStorage
+    this.userType = Number(localStorage.getItem('userType')); 
   }
 
   logout(): void {
@@ -40,5 +40,9 @@ export class HeaderComponent {
       localStorage.removeItem('userType');
       this.router.navigate(['/']);
     }
+  }
+
+  navigateTo(path: string): void {
+    this.router.navigate([path]);
   }
 }

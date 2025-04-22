@@ -1,0 +1,138 @@
+<div class="page-container">
+    <div class="page-header">
+      <h1>Your Dashboard</h1>
+      <p class="subtitle">Track your progress and achievements</p>
+    </div>
+    
+    <div class="stats-grid">
+      <!-- Points Card -->
+      <mat-card class="stats-card">
+        <div class="stat-icon">
+          <mat-icon>stars</mat-icon>
+        </div>
+        <mat-card-header>
+          <mat-card-title>Total Points</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+          <h2 class="stat-value">2,450</h2>
+          <p class="stat-change positive">+150 this week</p>
+        </mat-card-content>
+      </mat-card>
+
+      <!-- Badges Card -->
+      <mat-card class="stats-card">
+        <div class="stat-icon">
+          <mat-icon>military_tech</mat-icon>
+        </div>
+        <mat-card-header>
+          <mat-card-title>Badges Earned</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+          <h2 class="stat-value">12</h2>
+          <p class="stat-change positive">2 new this month</p>
+        </mat-card-content>
+      </mat-card>
+
+      <!-- Rank Card -->
+      <mat-card class="stats-card">
+        <div class="stat-icon">
+          <mat-icon>leaderboard</mat-icon>
+        </div>
+        <mat-card-header>
+          <mat-card-title>Current Rank</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+          <h2 class="stat-value">#15</h2>
+          <p class="stat-change">Top 10%</p>
+        </mat-card-content>
+      </mat-card>
+    </div>
+    
+    <!-- Chart Card -->
+    <mat-card class="chart-card">
+      <mat-card-header>
+        <mat-card-title>Points Growth</mat-card-title>
+        <div class="period-selector">
+          <span class="period active">Weekly</span>
+          <span class="period">Monthly</span>
+          <span class="period">Yearly</span>
+        </div>
+      </mat-card-header>
+      <mat-card-content>
+        <div class="chart-container">
+          <canvas baseChart [data]="lineChartData" [options]="lineChartOptions" [plugins]="lineChartPlugins" [type]="'line'"></canvas>
+        </div>
+      </mat-card-content>
+    </mat-card>
+    
+    <!-- Recent Activities -->
+    <mat-card class="activities-card">
+      <mat-card-header>
+        <mat-card-title>Recent Activities</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <div class="activity-list">
+          <div class="activity-item">
+            <div class="activity-icon completed">
+              <mat-icon>check_circle</mat-icon>
+            </div>
+            <div class="activity-content">
+              <h3>Completed JavaScript Challenge</h3>
+              <p class="activity-date">Today, 10:30 AM</p>
+            </div>
+            <div class="activity-points">+50 pts</div>
+          </div>
+          
+          <div class="activity-item">
+            <div class="activity-icon badge">
+              <mat-icon>military_tech</mat-icon>
+            </div>
+            <div class="activity-content">
+              <h3>Earned "Code Guru" Badge</h3>
+              <p class="activity-date">Yesterday, 2:15 PM</p>
+            </div>
+            <div class="activity-points">+100 pts</div>
+          </div>
+          
+          <div class="activity-item">
+            <div class="activity-icon mentor">
+              <mat-icon>people</mat-icon>
+            </div>
+            <div class="activity-content">
+              <h3>Mentored 2 New Users</h3>
+              <p class="activity-date">Apr 19, 2025</p>
+            </div>
+            <div class="activity-points">+75 pts</div>
+          </div>
+        </div>
+      </mat-card-content>
+    </mat-card>
+    <mat-card class="users-card">
+      <mat-card-header>
+        <mat-card-title>Utilisateurs</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <table class="users-table">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Email</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let user of users">
+              <td>{{ user.id }}</td>
+              <td>{{ user.email }}</td>
+              <td>
+                <button mat-raised-button color="primary" (click)="navigateToLevelForm(user.id)">
+                  Ajouter un niveau
+                </button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </mat-card-content>
+    </mat-card>
+    
+  </div>

@@ -1,0 +1,63 @@
+.history-container {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 20px;
+}
+
+.activity-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #ffffff;
+  border-radius: 12px;
+  padding: 16px 24px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+}
+
+.activity-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+}
+
+.icon-section {
+  margin-right: 20px;
+}
+
+.activity-icon {
+  font-size: 32px;
+  color: #4a90e2;
+}
+
+.activity-details {
+  flex: 1;
+}
+
+.activity-title {
+  font-size: 18px;
+  font-weight: 600;
+  margin: 0 0 4px 0;
+}
+
+.activity-description {
+  font-size: 14px;
+  color: #666;
+  margin: 0;
+}
+
+.activity-meta {
+  text-align: right;
+}
+
+.activity-points {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 4px;
+  display: block;
+}
+
+.activity-date {
+  font-size: 12px;
+  color: #999;
+}

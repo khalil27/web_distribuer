@@ -1,0 +1,22 @@
+<div class="history-container">
+  <div *ngFor="let activity of activities" class="activity-card">
+    <!-- Icône statique -->
+    <div class="icon-section">
+      <mat-icon class="activity-icon">star</mat-icon> <!-- Icône statique "star" -->
+    </div>
+    
+    <!-- Détails de l'activité -->
+    <div class="activity-details">
+      <h3 class="activity-title">Points Earned: {{ activity.pointsEarned }}</h3>
+      <p class="activity-description">Reason: {{ activity.reason }}</p>
+    </div>
+    
+    <!-- Métadonnées -->
+    <div class="activity-meta">
+      <span class="activity-points" [ngClass]="activity.pointsColor">
+        {{ activity.pointsEarned > 0 ? '+' : '' }}{{ activity.pointsEarned }}
+      </span>
+      <div class="activity-date">{{ activity.date | date:'short' }}</div> <!-- Date formatée -->
+    </div>
+  </div>
+</div>

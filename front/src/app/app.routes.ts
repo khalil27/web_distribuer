@@ -31,6 +31,35 @@ export const routes: Routes = [
     { path: 'competences/:id', component: CompetenceDetailComponent },
     { path: 'skill_comp', component: SkillsComponent },
   { path: 'my-ratings', component: MyRatingsComponent },
+  {path: '',
+    redirectTo: 'dashboard',
+    pathMatch: 'full'
+  },
+  {
+    path: 'dashboard',
+    loadComponent: () => import('./components/dashboard/dashboard.component')
+      .then(m => m.DashboardComponent)
+  },
+  {
+    path: 'badges',
+    loadComponent: () => import('./components/badge/badge.component')
+      .then(m => m.BadgeComponent)
+  },
+  {
+    path: 'leaderboard',
+    loadComponent: () => import('./components/leaderboard/leaderboard.component')
+      .then(m => m.LeaderboardComponent)
+  },
+  {
+    path: 'history',
+    loadComponent: () => import('./components/history/history.component')
+      .then(m => m.HistoryComponent)
+  },
+  
+  {
+    path: 'add-level/:id',
+    loadComponent: () => import('./components/add-level/add-level.component').then(m => m.AddLevelComponent)
+  },
     { path: '**', redirectTo: '',pathMatch:'full' }
 ];
 

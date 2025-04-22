@@ -1,0 +1,26 @@
+<mat-card class="add-level-card">
+    <mat-card-header>
+      <mat-card-title>Ajouter un Niveau</mat-card-title>
+    </mat-card-header>
+  
+    <mat-card-content>
+      <form (ngSubmit)="onSubmit()" class="form-container">
+        <input type="hidden" name="userId" [value]="userId" />
+  
+        <mat-form-field appearance="outline" class="full-width">
+          <mat-label>Titre</mat-label>
+          <input matInput [(ngModel)]="level.title" name="title" required />
+        </mat-form-field>
+  
+        <mat-form-field appearance="outline" class="full-width">
+          <mat-label>Description</mat-label>
+          <textarea matInput [(ngModel)]="level.description" name="description" required></textarea>
+        </mat-form-field>
+  
+        <button mat-raised-button color="primary" type="submit">
+          Enregistrer le niveau
+        </button>
+      </form>
+    </mat-card-content>
+  </mat-card>
+  
