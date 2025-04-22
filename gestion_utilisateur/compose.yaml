@@ -1,0 +1,30 @@
+
+
+services:
+  server:
+    build:
+      context: .
+    ports:
+      - 8083:8083
+    depends_on:
+      - mysql
+
+  mysql:
+    image: mysql:8.0
+    container_name: mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: root_password   # Spécifier le mot de passe ici
+      MYSQL_DATABASE: gestion_voiture      # Nom de la base de données
+    ports:
+      - "3307:3306"
+    volumes:
+      - mysql-data:/var/lib/mysql
+    networks:
+      - spring-net
+
+volumes:
+  mysql-data:
+
+networks:
+  spring-net:
+    driver: bridge
