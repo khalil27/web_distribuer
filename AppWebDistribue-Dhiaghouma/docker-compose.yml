@@ -1,0 +1,17 @@
+version: '3'
+
+services:
+  frontend:
+    build: C:/Users/DELL/Downloads/project-bolt-bolt-angular-mdvqagb3/project
+    ports:
+      - "4200:4200"
+    depends_on:
+      - backend
+
+  backend:
+    build: .  # Current directory (Rating-service)
+    ports:
+      - "8082:8082"
+    environment:
+      - SPRING_PROFILES_ACTIVE=docker
+      - SERVER_PORT=8082
