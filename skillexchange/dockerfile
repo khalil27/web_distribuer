@@ -1,0 +1,24 @@
+# Build stage
+FROM maven:3.8.5-openjdk-17 AS build
+COPY . /app
+WORKDIR /app
+# Skip resource filtering to avoid encoding issues
+RUN mvn clean package -DskipTests -Dmaven.resources.skip=true
+
+# Manually copy the application.properties
+RUN mkdir -p target/classes/
+COPY src/main/resources/application.properties target/classes/
+
+# Run stage
+FROM openjdk:17-jdk-slim
+
+ENV SPRING_OUTPUT_ANSI_ENABLED=ALWAYS \
+    JAVA_OPTS=""
+
+WORKDIR /app
+
+COPY --from=build /app/target/*.jar app.jar
+
+EXPOSE 8081
+
+ENTRYPOINT ["sh", "-c", "java $JAVA_OPTS -jar app.jar"]
