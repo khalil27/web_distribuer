@@ -11,6 +11,8 @@ import { CommercialHomeComponent } from './components/commercial-home/commercial
 import { CompetenceListComponent } from './components/competence/competence-list/competence-list.component';
 import { CompetenceFormComponent } from './components/competence/competence-form/competence-form.component';
 import { CompetenceDetailComponent } from './components/competence/competence-detail/competence-detail.component';
+import { SkillsComponent } from './components/skills-component/skills-component.component';
+import { MyRatingsComponent } from './components/my-ratings-component/my-ratings-component.component';
 
 
 
@@ -27,6 +29,8 @@ export const routes: Routes = [
     { path: 'competences/new', component: CompetenceFormComponent },
     { path: 'competences/edit/:id', component: CompetenceFormComponent },
     { path: 'competences/:id', component: CompetenceDetailComponent },
+    { path: 'skill_comp', component: SkillsComponent },
+  { path: 'my-ratings', component: MyRatingsComponent },
     { path: '**', redirectTo: '',pathMatch:'full' }
 ];
 
